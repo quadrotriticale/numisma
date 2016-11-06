@@ -1,0 +1,148 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="navbar-brand">NUMISMA</a>
+    </div>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><button ng-click="minimizeApp()" class="btn btn-default button-window"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button></li>
+      <li><button ng-click="maximizeApp()" class="btn btn-default button-window"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span></button></li>
+      <li><button ng-click="quitApp()" class="btn btn-default button-window"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+      <div class="row">
+         
+      
+        <section id="sidebar" class="col-sm-3">
+
+
+          <div class="panel-group">
+
+            <div class="panel panel-default">
+              <div ng-click="goToYearsPage()" class="panel-heading">
+                <a class="panel-title">Commemorative 2€</a>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">Countries</h4>
+              </div>
+                <ul class="list-group countries-list">
+                  <li ng-click="setCurrentCountry($index)" ng-repeat="country in countries" class="list-group-item">{{ country.name }}<span class="badge" ng-class="{ completed : countries_count[$index].count == countries_count[$index].max }">{{ countries_count[$index].count }}/{{ countries_count[$index].max }}</span></li>
+                </ul>
+            </div>
+
+            
+
+          </div>
+
+
+        </section>
+
+
+
+
+
+        <section id="content" class="col-sm-9">
+
+
+          <div ng-show="!current_country">
+            <div class="waiting-selection">
+              <img src="images/blue_coin.png">
+              <h3><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>Select a country from the sidebar<br>or visit the commemorative coins section</h3>
+            </div>
+          </div>
+
+
+
+          <div ng-show="current_country">
+
+            <div class="coins-info">
+              <img ng-src="{{ current_country.image }}">
+              <h3>{{ current_country.name }}</h3> 
+              <p ng-bind-html="current_country.description"></p>
+            </div>
+
+            <div class="coins">
+
+              <p class="series-heading"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>{{ current_country.info }}</p>
+              <div class="row">
+                <div ng-repeat="coin in current_country.coins" class="col-md-4">
+                  <div class="thumbnail">
+                  <p>{{ coin.value }}</p>
+                  <span ng-click="setCurrentCoin_country(current_country, -1, $index)" class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal1" aria-hidden="true"></span>
+                  <img ng-src="{{ coin.image }}">
+                  <div class="coin-owned">
+                    <span ng-click="toggleCoinOwned(coin)" ng-class="{ owned : coin.owned }" class="owned-text label label-info">OWNED</span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>  
+
+
+            <div ng-repeat="series in current_country.other_series" class="coins"> 
+
+              <p class="series-heading" data-toggle="collapse" href="#series-collapse{{$index}}"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>{{ series.info }}</p>
+              <div class="collapse row" id="series-collapse{{$index}}">
+                <div ng-repeat="coin in series.coins" class="col-md-4">
+                  <div class="thumbnail">
+                  <p>{{ coin.value }}</p>
+                  <span ng-click="setCurrentCoin_country(current_country, $parent.$index, $index)" class="glyphicon glyphicon-info-sign" data-toggle="modal" data-target="#myModal1" aria-hidden="true"></span>
+                  <img ng-src="{{ coin.image }}">
+                  <div class="coin-owned">
+                    <span ng-click="toggleCoinOwned(coin)" ng-class="{ owned : coin.owned }" class="owned-text label label-info">OWNED</span>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>   
+
+
+            <!-- Modal -->
+          <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel1">{{ current_country.name }} - {{ current_coin.value }}</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-6 image-col">
+                      <img ng-src="{{ current_coin.image }}">
+                    </div>
+                    <div class="col-md-6">
+                      <p><b>Description:</b> {{ current_coin.description }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div class="coin-owned">
+                    <span ng-click="toggleCoinOwned(current_coin)" ng-class="{ owned : current_coin.owned }" class="owned-text label label-info">OWNED</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          </div>
+
+
+
+
+        </section>
+
+      </div>
+
+
+    </div>

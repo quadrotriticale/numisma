@@ -1,0 +1,5 @@
+node_modules
+/
+bower_components/
+images/
+numisma-win32-ia32/

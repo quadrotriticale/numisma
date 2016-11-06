@@ -1,0 +1,27 @@
+{
+  "name": "numisma",
+  "description": "Euro Coins Collection Manager",
+  "main": "main.js",
+  "authors": [
+    "-"
+  ],
+  "license": "-",
+  "keywords": [
+    "-"
+  ],
+  "homepage": "-",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-electron": "^0.2.1",
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "pouchdb": "^6.0.5"
+  }
+}

@@ -1,0 +1,329 @@
+
+/*
+	| GENERAL |
+*/
+
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700';
+
+body {
+	background-color: #eceaea;
+	font-family: 'Open Sans', 'Arial', sans-serif;
+	padding-top: 61px;
+}
+
+
+
+
+/*
+	| NAVBAR | 
+*/
+
+.navbar-default {
+	background-color: #295cb9;
+	border: none;
+	border-radius: 0;
+	-webkit-app-region: drag;
+}
+
+.navbar-default .navbar-brand {
+    color: #F5F5F5;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.navbar-default .navbar-brand:hover {
+    color: #F5F5F5;
+}
+
+.button-window {
+	background-color: #295cb9;
+	color: #f5f5f5;
+	border-radius: 0;
+	border: none;
+	-webkit-app-region: no-drag;
+	margin-left: 3px;
+}
+.button-window:hover {
+	background-color: #1043A0;
+	color: #F5F5F5;
+	border: none;
+}
+.button-window:active {
+	background-color: #295cb9;
+	color: #F5F5F5;
+	border: none;
+	outline: none;
+}
+.button-window:focus {
+	background-color: #295cb9;
+	color: #F5F5F5;
+	border: none;
+	outline: none;
+}
+.button-window:active:focus {
+	background-color: #295cb9;
+	color: #F5F5F5;
+	border: none;
+	outline: none;
+}
+
+
+
+
+/*
+	| SIDEBAR !
+*/
+
+#sidebar {
+	position: fixed;
+	bottom: 0;
+	left: 5px;
+	top: 61px;
+	overflow-y: scroll;
+	z-index: 1000;
+	display: block;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.list-group .badge {
+	background-color: #5981ca;
+	opacity: 0.3;
+}
+
+.list-group .badge.completed {
+	opacity: 0.9;
+}
+
+.list-group-item {
+	border-color: #EEE;
+}
+.list-group-item:first-child, .list-group-item:last-child {
+	border-radius: 0;
+}
+
+.panel-default {
+	border: none;
+}
+
+.panel-default .panel-heading {
+	background-color: #5981ca;
+	color: #F5F5F5;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	padding: 10px 15px;
+}
+
+.panel-group .panel {
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.panel-heading a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.panel-title {
+	font-size: 14px;
+}
+
+.well {
+	background-color: #5981ca;
+	color: #F5F5F5;
+	border: none;
+	border-radius: 0;
+	padding: 10px 15px;
+	margin-bottom: 10px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+
+
+
+/*
+	| CONTENT |
+*/
+
+#content {
+	float: right;
+}
+
+.coin-owned {
+	color: #295cb9;
+}
+
+.coin-owned .glyphicon {
+	float: left;
+	font-size: 14px;
+	opacity: 0.3;
+	cursor: pointer;
+	margin-right: 5px;
+}
+
+.coin-owned .glyphicon.owned{
+	opacity: 1;
+}
+
+.coin-owned .owned-text {
+	float: left;
+}
+
+.coins {
+	background-color: #FFF;
+	margin-bottom: 20px;
+}
+
+.coins .glyphicon {
+	font-size: 12px;
+	margin-right: 5px;
+}
+
+.coins p {
+	color: #295cb9;
+	font-weight: 700;
+	border-bottom: 1px solid #EEE;
+	padding: 5px 8px;
+}
+
+.coins .row {
+	padding: 5px 10px;
+}
+
+.coins .row>:nth-child(3n+1) {  
+    clear: left;
+}
+
+.coins-info {
+	padding: 10px 5px;
+}
+
+.coins-info h3 {
+	display: inline;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.coins-info img {
+	height: 20px;
+    vertical-align: baseline;
+    margin-right: 5px;
+}
+
+.coins-info p {
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+.label {
+	background-color: #5981ca;
+	opacity: 0.3;
+	border-radius: 0;
+	cursor: pointer;
+	-webkit-transition: opacity 0.3s ease;
+}
+
+.label.owned {
+	opacity: 1;
+}
+
+.series-heading {
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.thumbnail {
+	border: none;
+	border-radius: 0;
+}
+
+.thumbnail .coin-owned {
+	margin-top: 5px;
+}
+
+.thumbnail .glyphicon {
+	float: right;
+	color: #5981ca;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.thumbnail img {
+	width: 100px;
+	height: 100px;
+}
+
+
+
+
+/*
+	| MODAL |
+*/
+
+.modal-content {
+	font-size: 13px;
+	border-radius: 0;
+}
+
+.modal-body .image-col {
+	text-align: center;
+}
+
+.modal-body img {
+	max-width: 270px;
+}
+
+.modal-footer {
+	border-top-color: #eee;
+}
+
+.modal-footer .owned-text {
+	font-size: 14px;
+}
+
+.modal-header {
+	border-bottom-color: #eee;
+}
+
+.modal-title {
+	color: #295cb9;
+    font-weight: bold;
+}
+
+
+
+
+/*
+	| WAITING SELECTION SCREEN |
+*/
+
+.waiting-selection {
+	color: #5981ca;
+	opacity: 0.5;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.waiting-selection .glyphicon {
+	margin-right: 12px;
+}
+
+.waiting-selection img {
+	width: 150px;
+}
+
+
+
+
+/*
+	| MEDIA QUERIES |
+*/
+
+@media (min-width: 1350px) {
+	.col-sm-3 {
+	    width: 20%;
+	}
+}
